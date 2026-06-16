@@ -733,6 +733,160 @@
       font-weight: 780;
     }
 
+
+    .call-log-panel {
+      margin-top: 22px;
+    }
+
+    .call-log-header {
+      align-items: center;
+      margin-bottom: 18px;
+    }
+
+    .call-log-meta {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: .82rem;
+      line-height: 1.5;
+    }
+
+    .logs-refresh-button {
+      width: auto;
+      min-width: 142px;
+      padding: 0 16px;
+    }
+
+    .logs-refresh-button.loading #refreshLogsIcon {
+      display: inline-block;
+      animation: spin .75s linear infinite;
+    }
+
+    .call-log-state {
+      margin-bottom: 14px;
+      padding: 12px 14px;
+      border-radius: 13px;
+      border: 1px solid var(--stroke);
+      background: rgba(255,255,255,.035);
+      color: var(--muted);
+      font-size: .84rem;
+      line-height: 1.5;
+    }
+
+    .call-log-state.success {
+      border-color: rgba(121, 242, 192, .25);
+      background: rgba(121, 242, 192, .07);
+      color: #c9ffe6;
+    }
+
+    .call-log-state.error {
+      border-color: rgba(255, 123, 139, .28);
+      background: rgba(255, 123, 139, .07);
+      color: #ffd0d6;
+    }
+
+    .call-log-table-wrap {
+      width: 100%;
+      overflow-x: auto;
+      border: 1px solid var(--stroke);
+      border-radius: 16px;
+      background: rgba(2, 11, 21, .35);
+    }
+
+    .call-log-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 720px;
+    }
+
+    .call-log-table th,
+    .call-log-table td {
+      padding: 14px 15px;
+      text-align: left;
+      border-bottom: 1px solid rgba(255,255,255,.075);
+      font-size: .86rem;
+      white-space: nowrap;
+    }
+
+    .call-log-table th {
+      color: #dce7f6;
+      font-weight: 800;
+      background: rgba(255,255,255,.035);
+    }
+
+    .call-log-table td {
+      color: #dbe7f5;
+    }
+
+    .call-log-table tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .call-log-table tbody tr:hover td {
+      background: rgba(255,255,255,.025);
+    }
+
+    .muted-cell {
+      color: var(--muted) !important;
+      text-align: center !important;
+    }
+
+    .direction-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 78px;
+      padding: 6px 9px;
+      border-radius: 999px;
+      font-size: .74rem;
+      font-weight: 850;
+      text-transform: lowercase;
+      border: 1px solid var(--stroke);
+      background: rgba(255,255,255,.045);
+    }
+
+    .direction-pill.inbound {
+      color: #c9ffe6;
+      border-color: rgba(121, 242, 192, .25);
+      background: rgba(121, 242, 192, .07);
+    }
+
+    .direction-pill.outbound {
+      color: #d7e7ff;
+      border-color: rgba(108, 168, 255, .28);
+      background: rgba(108, 168, 255, .09);
+    }
+
+    .direction-pill.unknown {
+      color: var(--muted);
+    }
+
+    .call-log-pagination {
+      margin-top: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .pagination-button {
+      width: auto;
+      min-width: 104px;
+      padding: 0 14px;
+    }
+
+    .pagination-button:disabled {
+      opacity: .45;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .pagination-info {
+      color: var(--muted);
+      font-size: .84rem;
+      font-weight: 750;
+    }
+
     footer {
       margin-top: 26px;
       color: #70849e;
@@ -1004,6 +1158,59 @@
       </aside>
     </section>
 
+    <section class="panel call-log-panel" aria-label="Recent call logs">
+      <div class="panel-inner">
+        <div class="panel-header call-log-header">
+          <div>
+            <div class="panel-kicker">Call logs</div>
+            <h2>Recent Retell calls</h2>
+            <div class="call-log-meta" id="callLogsCount">No logs loaded yet</div>
+          </div>
+
+          <button class="secondary-button logs-refresh-button" id="refreshLogsButton" type="button">
+            <span id="refreshLogsIcon">↻</span>
+            Refresh logs
+          </button>
+        </div>
+
+        <div class="call-log-state" id="callLogsState">
+          Click refresh to load call logs.
+        </div>
+
+        <div class="call-log-table-wrap">
+          <table class="call-log-table">
+            <thead>
+              <tr>
+                <th>Call Type</th>
+                <th>From</th>
+                <th>To</th>
+                <th>Duration</th>
+                <th>Time</th>
+              </tr>
+            </thead>
+            <tbody id="callLogsBody">
+              <tr>
+                <td colspan="5" class="muted-cell">No call logs loaded yet.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="call-log-pagination">
+          <button class="secondary-button pagination-button" id="prevLogsPage" type="button" disabled>
+            Previous
+          </button>
+
+          <span class="pagination-info" id="callLogsPageInfo">Page 1</span>
+
+          <button class="secondary-button pagination-button" id="nextLogsPage" type="button" disabled>
+            Next
+          </button>
+        </div>
+      </div>
+    </section>
+
+
     <section class="flow-strip" aria-label="How the demo works">
       <div class="flow-item"><div class="flow-icon">1</div><div class="flow-title">Choose property</div></div>
       <div class="flow-item"><div class="flow-icon">2</div><div class="flow-title">Enter number</div></div>
@@ -1026,6 +1233,23 @@
       ============================================================
     */
     const WEBHOOK_URL = "http://59.103.127.217:5678/webhook/trigger-retell-call";
+
+
+    /*
+      ============================================================
+      CALL LOGS SETUP
+      Use your ACTIVE n8n production webhook URL.
+      This frontend does NOT contain the Retell API key.
+      Example:
+      https://YOUR-N8N-DOMAIN/webhook/retell-list-calls
+      ============================================================
+    */
+    const N8N_CALL_LOGS_WEBHOOK_URL = "http://59.103.127.217:5678/webhook/retell-list-calls";
+    const CALL_LOGS_LIMIT = 10;
+
+    let currentCallLogsPage = 1;
+    let callLogsTotal = 0;
+    let callLogsHasMore = false;
 
     /*
       Edit, remove, or add property objects here.
@@ -1129,6 +1353,15 @@
     const toast = document.getElementById("toast");
     const copyNumberButton = document.getElementById("copyNumber");
 
+    const refreshLogsButton = document.getElementById("refreshLogsButton");
+    const refreshLogsIcon = document.getElementById("refreshLogsIcon");
+    const callLogsBody = document.getElementById("callLogsBody");
+    const callLogsState = document.getElementById("callLogsState");
+    const callLogsCount = document.getElementById("callLogsCount");
+    const callLogsPageInfo = document.getElementById("callLogsPageInfo");
+    const prevLogsPage = document.getElementById("prevLogsPage");
+    const nextLogsPage = document.getElementById("nextLogsPage");
+
     function initializeProperties() {
       propertySelect.innerHTML = properties.map(property =>
         `<option value="${property.id}">${property.name} · ${property.price}</option>`
@@ -1207,6 +1440,206 @@
       showToast.timer = window.setTimeout(() => toast.classList.remove("show"), 2600);
     }
 
+
+    function escapeHtml(value) {
+      return String(value ?? "")
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+    }
+
+    function setCallLogsLoading(isLoading) {
+      refreshLogsButton.disabled = isLoading;
+      refreshLogsButton.classList.toggle("loading", isLoading);
+      refreshLogsIcon.textContent = isLoading ? "◌" : "↻";
+
+      prevLogsPage.disabled = isLoading || currentCallLogsPage <= 1;
+      nextLogsPage.disabled = isLoading || !callLogsHasMore;
+    }
+
+    function setCallLogsState(message, type = "") {
+      callLogsState.className = `call-log-state ${type}`.trim();
+      callLogsState.textContent = message;
+    }
+
+    function getCallDirection(call) {
+      const direction = String(call.direction || "").toLowerCase();
+
+      if (direction === "inbound" || direction === "outbound") {
+        return direction;
+      }
+
+      return "unknown";
+    }
+
+    function formatDuration(call) {
+      let durationMs = Number(call.duration_ms || 0);
+
+      if (!durationMs && call.call_cost && call.call_cost.total_duration_seconds) {
+        durationMs = Number(call.call_cost.total_duration_seconds) * 1000;
+      }
+
+      const totalSeconds = Math.round(durationMs / 1000);
+      const minutes = Math.floor(totalSeconds / 60);
+      const seconds = totalSeconds % 60;
+
+      if (minutes > 0) {
+        return `${minutes}m ${seconds}s`;
+      }
+
+      return `${seconds}s`;
+    }
+
+    function formatCallTime(timestamp) {
+      if (!timestamp) return "-";
+
+      const date = new Date(Number(timestamp));
+
+      if (Number.isNaN(date.getTime())) {
+        return "-";
+      }
+
+      return date.toLocaleString(undefined, {
+        dateStyle: "medium",
+        timeStyle: "short"
+      });
+    }
+
+    function updatePaginationControls(itemsCount) {
+      const startRecord = callLogsTotal === 0
+        ? 0
+        : ((currentCallLogsPage - 1) * CALL_LOGS_LIMIT) + 1;
+
+      const endRecord = Math.min(
+        currentCallLogsPage * CALL_LOGS_LIMIT,
+        callLogsTotal || ((currentCallLogsPage - 1) * CALL_LOGS_LIMIT) + itemsCount
+      );
+
+      callLogsPageInfo.textContent = `Page ${currentCallLogsPage}`;
+
+      if (callLogsTotal > 0) {
+        callLogsCount.textContent = `Showing ${startRecord}-${endRecord} of ${callLogsTotal} calls`;
+      } else {
+        callLogsCount.textContent = `Showing ${itemsCount} calls`;
+      }
+
+      prevLogsPage.disabled = currentCallLogsPage <= 1;
+      nextLogsPage.disabled = !callLogsHasMore;
+    }
+
+    function renderCallLogs(calls) {
+      if (!Array.isArray(calls) || calls.length === 0) {
+        callLogsBody.innerHTML = `
+          <tr>
+            <td colspan="5" class="muted-cell">No call logs found.</td>
+          </tr>
+        `;
+
+        updatePaginationControls(0);
+        setCallLogsState("No calls returned from Retell.", "");
+        return;
+      }
+
+      callLogsBody.innerHTML = calls.map(call => {
+        const direction = getCallDirection(call);
+
+        return `
+          <tr>
+            <td>
+              <span class="direction-pill ${escapeHtml(direction)}">
+                ${escapeHtml(direction)}
+              </span>
+            </td>
+            <td>${escapeHtml(call.from_number || "-")}</td>
+            <td>${escapeHtml(call.to_number || "-")}</td>
+            <td>${escapeHtml(formatDuration(call))}</td>
+            <td>${escapeHtml(formatCallTime(call.start_timestamp))}</td>
+          </tr>
+        `;
+      }).join("");
+
+      updatePaginationControls(calls.length);
+      setCallLogsState("Call logs updated successfully.", "success");
+    }
+
+    async function loadCallLogs(page = 1) {
+      if (
+        !N8N_CALL_LOGS_WEBHOOK_URL ||
+        N8N_CALL_LOGS_WEBHOOK_URL.includes("YOUR-N8N-DOMAIN")
+      ) {
+        setCallLogsState(
+          "Setup required: replace N8N_CALL_LOGS_WEBHOOK_URL with your active n8n production webhook URL.",
+          "error"
+        );
+        return;
+      }
+
+      currentCallLogsPage = page;
+
+      const skip = (currentCallLogsPage - 1) * CALL_LOGS_LIMIT;
+      const url = new URL(N8N_CALL_LOGS_WEBHOOK_URL);
+      url.searchParams.set("limit", CALL_LOGS_LIMIT);
+      url.searchParams.set("skip", skip);
+      url.searchParams.set("page", currentCallLogsPage);
+
+      setCallLogsLoading(true);
+      setCallLogsState("Loading call logs...", "");
+
+      try {
+        const response = await fetch(url.toString(), {
+          method: "GET"
+        });
+
+        const rawText = await response.text();
+        let data = {};
+
+        try {
+          data = rawText ? JSON.parse(rawText) : {};
+        } catch {
+          data = { message: rawText };
+        }
+
+        if (!response.ok) {
+          throw new Error(
+            data.message ||
+            data.error ||
+            `Call logs request failed with status ${response.status}.`
+          );
+        }
+
+        const calls = Array.isArray(data.items) ? data.items : [];
+
+        callLogsTotal = Number.isFinite(Number(data.total))
+          ? Number(data.total)
+          : 0;
+
+        callLogsHasMore = Boolean(data.has_more);
+
+        if (!callLogsHasMore && callLogsTotal > 0) {
+          callLogsHasMore = currentCallLogsPage * CALL_LOGS_LIMIT < callLogsTotal;
+        }
+
+        renderCallLogs(calls);
+      } catch (error) {
+        callLogsBody.innerHTML = `
+          <tr>
+            <td colspan="5" class="muted-cell">Unable to load call logs.</td>
+          </tr>
+        `;
+
+        const corsHint = error instanceof TypeError
+          ? " Check that your n8n webhook is active and returns Access-Control-Allow-Origin."
+          : "";
+
+        setCallLogsState(`${error.message}${corsHint}`, "error");
+      } finally {
+        setCallLogsLoading(false);
+      }
+    }
+
+
     propertySelect.addEventListener("change", () => {
       renderProperty(getSelectedProperty());
       statusBox.className = "status-box";
@@ -1275,6 +1708,13 @@
           `Call started successfully for ${property.name}.${callId}`
         );
         showToast("Outbound AI call launched");
+
+        if (
+          N8N_CALL_LOGS_WEBHOOK_URL &&
+          !N8N_CALL_LOGS_WEBHOOK_URL.includes("YOUR-N8N-DOMAIN")
+        ) {
+          window.setTimeout(() => loadCallLogs(1), 3500);
+        }
       } catch (error) {
         const corsHint = error instanceof TypeError
           ? " Check the webhook URL and the n8n Webhook node's Allowed Origins (CORS) setting."
@@ -1295,7 +1735,32 @@
       }
     });
 
+
+    refreshLogsButton.addEventListener("click", () => {
+      loadCallLogs(1);
+    });
+
+    prevLogsPage.addEventListener("click", () => {
+      if (currentCallLogsPage > 1) {
+        loadCallLogs(currentCallLogsPage - 1);
+      }
+    });
+
+    nextLogsPage.addEventListener("click", () => {
+      if (callLogsHasMore) {
+        loadCallLogs(currentCallLogsPage + 1);
+      }
+    });
+
+
     initializeProperties();
+
+    if (
+      N8N_CALL_LOGS_WEBHOOK_URL &&
+      !N8N_CALL_LOGS_WEBHOOK_URL.includes("YOUR-N8N-DOMAIN")
+    ) {
+      loadCallLogs(1);
+    }
   </script>
 </body>
 </html>
