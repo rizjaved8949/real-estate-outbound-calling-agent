@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#07111f" />
-  <title>Real AI Coach Agent</title>
+  <title>Real AI Coach Agent — Property Call Assistant</title>
   <style>
     :root {
       --bg: #06101d;
@@ -53,8 +53,8 @@
       inset: 0;
       pointer-events: none;
       background-image:
-        linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+        linear-gradient(rgba(255, 255, 255, .025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, .025) 1px, transparent 1px);
       background-size: 52px 52px;
       mask-image: linear-gradient(to bottom, black, transparent 82%);
     }
@@ -84,7 +84,9 @@
     }
 
     @keyframes drift {
-      to { transform: translate3d(35px, 25px, 0) scale(1.08); }
+      to {
+        transform: translate3d(35px, 25px, 0) scale(1.08);
+      }
     }
 
     .shell {
@@ -105,7 +107,7 @@
       background: rgba(6, 16, 29, 0.62);
       backdrop-filter: blur(20px);
       border-radius: 18px;
-      box-shadow: 0 12px 40px rgba(0,0,0,.18);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, .18);
     }
 
     .brand {
@@ -137,7 +139,7 @@
       padding: 9px 12px;
       border-radius: 999px;
       border: 1px solid var(--stroke);
-      background: rgba(255,255,255,.045);
+      background: rgba(255, 255, 255, .045);
     }
 
     .pulse-dot {
@@ -150,8 +152,12 @@
     }
 
     @keyframes pulse {
-      70% { box-shadow: 0 0 0 9px rgba(121, 242, 192, 0); }
-      100% { box-shadow: 0 0 0 0 rgba(121, 242, 192, 0); }
+      70% {
+        box-shadow: 0 0 0 9px rgba(121, 242, 192, 0);
+      }
+      100% {
+        box-shadow: 0 0 0 0 rgba(121, 242, 192, 0);
+      }
     }
 
     .hero {
@@ -220,9 +226,9 @@
       place-items: center;
       position: relative;
       background:
-        radial-gradient(circle, rgba(99,230,190,.14) 0 31%, transparent 32%),
-        radial-gradient(circle, transparent 0 47%, rgba(108,168,255,.16) 48% 48.5%, transparent 49%),
-        radial-gradient(circle, transparent 0 65%, rgba(182,146,255,.12) 66% 66.5%, transparent 67%);
+        radial-gradient(circle, rgba(99, 230, 190, .14) 0 31%, transparent 32%),
+        radial-gradient(circle, transparent 0 47%, rgba(108, 168, 255, .16) 48% 48.5%, transparent 49%),
+        radial-gradient(circle, transparent 0 65%, rgba(182, 146, 255, .12) 66% 66.5%, transparent 67%);
     }
 
     .phone-ring::before,
@@ -244,7 +250,9 @@
     }
 
     @keyframes rotate {
-      to { transform: rotate(360deg); }
+      to {
+        transform: rotate(360deg);
+      }
     }
 
     .ai-core {
@@ -253,11 +261,11 @@
       border-radius: 38px;
       display: grid;
       place-items: center;
-      background: linear-gradient(145deg, rgba(99,230,190,.95), rgba(108,168,255,.9));
+      background: linear-gradient(145deg, rgba(99, 230, 190, .95), rgba(108, 168, 255, .9));
       color: #03101a;
       box-shadow:
         0 28px 70px rgba(78, 203, 190, .24),
-        inset 0 1px 0 rgba(255,255,255,.7);
+        inset 0 1px 0 rgba(255, 255, 255, .7);
       transform: rotate(-7deg);
       position: relative;
       z-index: 2;
@@ -280,11 +288,17 @@
       color: #dce9f8;
       font-size: .84rem;
       font-weight: 700;
-      box-shadow: 0 18px 42px rgba(0,0,0,.22);
+      box-shadow: 0 18px 42px rgba(0, 0, 0, .22);
     }
 
-    .float-chip.a { top: 43px; right: 0; }
-    .float-chip.b { bottom: 57px; left: -5px; }
+    .float-chip.a {
+      top: 43px;
+      right: 0;
+    }
+    .float-chip.b {
+      bottom: 57px;
+      left: -5px;
+    }
 
     .mini-wave {
       display: flex;
@@ -300,13 +314,27 @@
       animation: wave .85s ease-in-out infinite alternate;
     }
 
-    .mini-wave span:nth-child(1) { height: 6px; }
-    .mini-wave span:nth-child(2) { height: 14px; animation-delay: -.35s; }
-    .mini-wave span:nth-child(3) { height: 9px; animation-delay: -.15s; }
-    .mini-wave span:nth-child(4) { height: 16px; animation-delay: -.5s; }
+    .mini-wave span:nth-child(1) {
+      height: 6px;
+    }
+    .mini-wave span:nth-child(2) {
+      height: 14px;
+      animation-delay: -.35s;
+    }
+    .mini-wave span:nth-child(3) {
+      height: 9px;
+      animation-delay: -.15s;
+    }
+    .mini-wave span:nth-child(4) {
+      height: 16px;
+      animation-delay: -.5s;
+    }
 
     @keyframes wave {
-      to { transform: scaleY(.45); opacity: .55; }
+      to {
+        transform: scaleY(.45);
+        opacity: .55;
+      }
     }
 
     .workspace {
@@ -429,7 +457,7 @@
       padding: 16px;
       margin: 4px 0 22px;
       border-radius: 18px;
-      background: linear-gradient(145deg, rgba(255,255,255,.055), rgba(255,255,255,.02));
+      background: linear-gradient(145deg, rgba(255, 255, 255, .055), rgba(255, 255, 255, .02));
       border: 1px solid var(--stroke);
       transition: transform .25s ease, border-color .25s ease;
     }
@@ -445,7 +473,7 @@
       position: relative;
       overflow: hidden;
       background:
-        linear-gradient(145deg, rgba(108,168,255,.7), rgba(99,230,190,.5)),
+        linear-gradient(145deg, rgba(108, 168, 255, .7), rgba(99, 230, 190, .5)),
         #19304a;
     }
 
@@ -471,10 +499,10 @@
       left: 50%;
       bottom: 18px;
       border-radius: 4px 4px 0 0;
-      background: rgba(99,230,190,.85);
+      background: rgba(99, 230, 190, .85);
       box-shadow:
-        -30px -4px 0 -5px rgba(212,239,255,.78),
-        30px -4px 0 -5px rgba(212,239,255,.78);
+        -30px -4px 0 -5px rgba(212, 239, 255, .78),
+        30px -4px 0 -5px rgba(212, 239, 255, .78);
     }
 
     .property-info h3 {
@@ -486,14 +514,39 @@
     .property-address {
       color: var(--muted);
       font-size: .84rem;
-      margin-bottom: 13px;
+      margin-bottom: 6px;
       line-height: 1.45;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .property-address .map-link {
+      color: var(--accent-2);
+      text-decoration: none;
+      font-size: .75rem;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(108, 168, 255, .2);
+      background: rgba(108, 168, 255, .07);
+      transition: background .2s ease, border-color .2s ease;
+    }
+
+    .property-address .map-link:hover {
+      background: rgba(108, 168, 255, .15);
+      border-color: rgba(108, 168, 255, .4);
     }
 
     .property-meta {
       display: flex;
       flex-wrap: wrap;
       gap: 7px;
+      margin-bottom: 8px;
     }
 
     .meta-chip {
@@ -501,8 +554,31 @@
       font-size: .72rem;
       padding: 6px 8px;
       border: 1px solid var(--stroke);
-      background: rgba(255,255,255,.035);
+      background: rgba(255, 255, 255, .035);
       border-radius: 8px;
+    }
+
+    .property-highlights {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px 12px;
+      padding: 0;
+      margin: 6px 0 0;
+      list-style: none;
+      font-size: .78rem;
+      color: #c8d8ea;
+    }
+
+    .property-highlights li {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .property-highlights li::before {
+      content: "•";
+      color: var(--accent);
+      font-weight: 900;
     }
 
     .call-button {
@@ -542,7 +618,7 @@
     .spinner {
       width: 18px;
       height: 18px;
-      border: 2px solid rgba(3,19,29,.25);
+      border: 2px solid rgba(3, 19, 29, .25);
       border-top-color: #03131d;
       border-radius: 50%;
       animation: spin .75s linear infinite;
@@ -550,7 +626,9 @@
     }
 
     @keyframes spin {
-      to { transform: rotate(360deg); }
+      to {
+        transform: rotate(360deg);
+      }
     }
 
     .status-box {
@@ -561,7 +639,7 @@
       font-size: .88rem;
       line-height: 1.55;
       border: 1px solid var(--stroke);
-      background: rgba(255,255,255,.035);
+      background: rgba(255, 255, 255, .035);
     }
 
     .status-box.success {
@@ -591,7 +669,7 @@
       border-radius: 50%;
       right: -100px;
       bottom: -110px;
-      background: radial-gradient(circle, rgba(108,168,255,.22), transparent 67%);
+      background: radial-gradient(circle, rgba(108, 168, 255, .22), transparent 67%);
       pointer-events: none;
     }
 
@@ -606,9 +684,9 @@
       padding: 20px;
       border-radius: 20px;
       background:
-        linear-gradient(145deg, rgba(108,168,255,.11), rgba(99,230,190,.075)),
+        linear-gradient(145deg, rgba(108, 168, 255, .11), rgba(99, 230, 190, .075)),
         rgba(2, 11, 21, .38);
-      border: 1px solid rgba(108,168,255,.23);
+      border: 1px solid rgba(108, 168, 255, .23);
       position: relative;
       z-index: 1;
     }
@@ -642,7 +720,7 @@
       min-height: 45px;
       border-radius: 12px;
       border: 1px solid var(--stroke);
-      background: rgba(255,255,255,.045);
+      background: rgba(255, 255, 255, .045);
       color: #e7f0fb;
       font: inherit;
       font-weight: 760;
@@ -656,7 +734,7 @@
     }
 
     .secondary-button:hover {
-      background: rgba(255,255,255,.075);
+      background: rgba(255, 255, 255, .075);
       border-color: var(--stroke-bright);
       transform: translateY(-1px);
     }
@@ -683,8 +761,8 @@
       place-items: center;
       border-radius: 8px;
       color: var(--accent);
-      background: rgba(99,230,190,.08);
-      border: 1px solid rgba(99,230,190,.17);
+      background: rgba(99, 230, 190, .08);
+      border: 1px solid rgba(99, 230, 190, .17);
     }
 
     .flow-strip {
@@ -711,7 +789,7 @@
       top: 50%;
       right: -12px;
       transform: translateY(-50%);
-      color: rgba(255,255,255,.26);
+      color: rgba(255, 255, 255, .26);
     }
 
     .flow-icon {
@@ -721,7 +799,7 @@
       display: grid;
       place-items: center;
       border-radius: 11px;
-      background: rgba(255,255,255,.055);
+      background: rgba(255, 255, 255, .055);
       border: 1px solid var(--stroke);
       color: var(--accent);
       font-size: .78rem;
@@ -733,7 +811,6 @@
       font-size: .78rem;
       font-weight: 780;
     }
-
 
     .call-log-panel {
       margin-top: 22px;
@@ -767,7 +844,7 @@
       padding: 12px 14px;
       border-radius: 13px;
       border: 1px solid var(--stroke);
-      background: rgba(255,255,255,.035);
+      background: rgba(255, 255, 255, .035);
       color: var(--muted);
       font-size: .84rem;
       line-height: 1.5;
@@ -803,7 +880,7 @@
     .call-log-table td {
       padding: 14px 15px;
       text-align: left;
-      border-bottom: 1px solid rgba(255,255,255,.075);
+      border-bottom: 1px solid rgba(255, 255, 255, .075);
       font-size: .86rem;
       white-space: nowrap;
     }
@@ -811,7 +888,7 @@
     .call-log-table th {
       color: #dce7f6;
       font-weight: 800;
-      background: rgba(255,255,255,.035);
+      background: rgba(255, 255, 255, .035);
     }
 
     .call-log-table td {
@@ -823,7 +900,7 @@
     }
 
     .call-log-table tbody tr:hover td {
-      background: rgba(255,255,255,.025);
+      background: rgba(255, 255, 255, .025);
     }
 
     .muted-cell {
@@ -842,7 +919,7 @@
       font-weight: 850;
       text-transform: lowercase;
       border: 1px solid var(--stroke);
-      background: rgba(255,255,255,.045);
+      background: rgba(255, 255, 255, .045);
     }
 
     .direction-pill.inbound {
@@ -906,7 +983,7 @@
       border: 1px solid var(--stroke-bright);
       background: rgba(7, 19, 34, .95);
       color: #edf6ff;
-      box-shadow: 0 22px 55px rgba(0,0,0,.35);
+      box-shadow: 0 22px 55px rgba(0, 0, 0, .35);
       transform: translateY(24px);
       opacity: 0;
       pointer-events: none;
@@ -972,8 +1049,14 @@
         padding: 9px 11px;
       }
 
-      .float-chip.a { right: -4px; top: 33px; }
-      .float-chip.b { left: -4px; bottom: 42px; }
+      .float-chip.a {
+        right: -4px;
+        top: 33px;
+      }
+      .float-chip.b {
+        left: -4px;
+        bottom: 42px;
+      }
 
       .property-card {
         grid-template-columns: 1fr;
@@ -1053,8 +1136,15 @@
               <div class="property-visual"></div>
               <div class="property-info">
                 <h3 id="propertyName">Property name</h3>
-                <div class="property-address" id="propertyAddress">Property address</div>
+                <div class="property-address" id="propertyAddress">
+                  <span>Property address</span>
+                  <a href="#" id="propertyMapLink" target="_blank" rel="noopener" class="map-link">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="3"/></svg>
+                    View on map
+                  </a>
+                </div>
                 <div class="property-meta" id="propertyMeta"></div>
+                <ul class="property-highlights" id="propertyHighlights"></ul>
               </div>
             </div>
 
@@ -1160,7 +1250,7 @@
             </thead>
             <tbody id="callLogsBody">
               <tr>
-            <td colspan="6" class="muted-cell">No call logs loaded yet.</td>
+                <td colspan="6" class="muted-cell">No call logs loaded yet.</td>
               </tr>
             </tbody>
           </table>
@@ -1179,10 +1269,6 @@
         </div>
       </div>
     </section>
-
-
-
-
 
   </main>
 
@@ -1216,92 +1302,231 @@
     let callLogsHasMore = false;
 
     /*
-      Edit, remove, or add property objects here.
-      The selected property's details are converted into instructions
-      and sent to your Retell agent through n8n.
+      ============================================================
+      10 LUXURY PROPERTIES — with full location details & Google Maps
+      ============================================================
     */
-    const properties = [
-      {
-        id: "skyline-penthouse",
-        name: "Skyline Penthouse",
-        address: "1800 Grand Boulevard, Kansas City, MO",
-        price: "$1,250,000",
-        beds: "3 beds",
-        baths: "3.5 baths",
-        size: "2,840 sq ft",
-        type: "Penthouse",
-        highlights: [
-          "Floor-to-ceiling skyline views",
-          "Private elevator entrance",
-          "Chef's kitchen with premium appliances",
-          "Two reserved parking spaces"
-        ]
-      },
-      {
-        id: "brookside-villa",
-        name: "Brookside Garden Villa",
-        address: "6248 Wornall Road, Kansas City, MO",
-        price: "$785,000",
-        beds: "4 beds",
-        baths: "3 baths",
-        size: "3,120 sq ft",
-        type: "Villa",
-        highlights: [
-          "Landscaped private garden",
-          "Renovated open-plan kitchen",
-          "Finished lower-level entertainment space",
-          "Walkable neighborhood location"
-        ]
-      },
-      {
-        id: "river-market-loft",
-        name: "River Market Loft",
-        address: "510 Delaware Street, Kansas City, MO",
-        price: "$465,000",
-        beds: "2 beds",
-        baths: "2 baths",
-        size: "1,520 sq ft",
-        type: "Loft",
-        highlights: [
-          "Historic exposed brick interior",
-          "Large industrial-style windows",
-          "Rooftop resident lounge",
-          "Steps from cafés and the city market"
-        ]
-      },
-      {
-        id: "lakeview-retreat",
-        name: "Lakeview Modern Retreat",
-        address: "210 Shoreline Drive, Lake Winnebago, MO",
-        price: "$995,000",
-        beds: "4 beds",
-        baths: "4 baths",
-        size: "3,760 sq ft",
-        type: "Waterfront",
-        highlights: [
-          "Direct lake access",
-          "Private dock and outdoor lounge",
-          "Double-height living room",
-          "Dedicated home office"
-        ]
-      },
-      {
-        id: "plaza-residence",
-        name: "Plaza Executive Residence",
-        address: "4720 Jefferson Street, Kansas City, MO",
-        price: "$640,000",
-        beds: "3 beds",
-        baths: "2.5 baths",
-        size: "2,060 sq ft",
-        type: "Residence",
-        highlights: [
-          "Minutes from Country Club Plaza",
-          "Designer interior finishes",
-          "Private terrace",
-          "Secure covered parking"
-        ]
-      }
-    ];
+    const properties = [{
+      id: "skyline-penthouse",
+      name: "Skyline Penthouse",
+      address: "1800 Grand Boulevard",
+      city: "Kansas City",
+      state: "MO",
+      zip: "64108",
+      fullAddress: "1800 Grand Boulevard, Kansas City, MO 64108",
+      price: "$1,250,000",
+      beds: 3,
+      baths: 3.5,
+      sqft: 2840,
+      type: "Penthouse",
+      yearBuilt: 2020,
+      description: "A breathtaking penthouse with floor-to-ceiling windows offering panoramic skyline views. This modern masterpiece features a private elevator entrance, chef's kitchen with premium appliances, and two reserved parking spaces.",
+      highlights: [
+        "Floor-to-ceiling skyline views",
+        "Private elevator entrance",
+        "Chef's kitchen with premium appliances",
+        "Two reserved parking spaces"
+      ],
+      googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=1800+Grand+Boulevard+Kansas+City+MO+64108"
+    }, {
+      id: "brookside-villa",
+      name: "Brookside Garden Villa",
+      address: "6248 Wornall Road",
+      city: "Kansas City",
+      state: "MO",
+      zip: "64113",
+      fullAddress: "6248 Wornall Road, Kansas City, MO 64113",
+      price: "$785,000",
+      beds: 4,
+      baths: 3,
+      sqft: 3120,
+      type: "Villa",
+      yearBuilt: 2015,
+      description: "Nestled in the heart of Brookside, this garden villa features a landscaped private garden, a renovated open-plan kitchen, and a finished lower-level entertainment space. Walkable to shops and cafés.",
+      highlights: [
+        "Landscaped private garden",
+        "Renovated open-plan kitchen",
+        "Finished lower-level entertainment space",
+        "Walkable neighborhood location"
+      ],
+      googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=6248+Wornall+Road+Kansas+City+MO+64113"
+    }, {
+      id: "river-market-loft",
+      name: "River Market Loft",
+      address: "510 Delaware Street",
+      city: "Kansas City",
+      state: "MO",
+      zip: "64105",
+      fullAddress: "510 Delaware Street, Kansas City, MO 64105",
+      price: "$465,000",
+      beds: 2,
+      baths: 2,
+      sqft: 1520,
+      type: "Loft",
+      yearBuilt: 1906,
+      description: "A stunning loft in the historic River Market district. Exposed brick, large industrial-style windows, and a rooftop resident lounge. Steps from cafés, galleries, and the City Market.",
+      highlights: [
+        "Historic exposed brick interior",
+        "Large industrial-style windows",
+        "Rooftop resident lounge",
+        "Steps from cafés and the city market"
+      ],
+      googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=510+Delaware+Street+Kansas+City+MO+64105"
+    }, {
+      id: "lakeview-retreat",
+      name: "Lakeview Modern Retreat",
+      address: "210 Shoreline Drive",
+      city: "Lake Winnebago",
+      state: "MO",
+      zip: "64034",
+      fullAddress: "210 Shoreline Drive, Lake Winnebago, MO 64034",
+      price: "$995,000",
+      beds: 4,
+      baths: 4,
+      sqft: 3760,
+      type: "Waterfront",
+      yearBuilt: 2021,
+      description: "A contemporary waterfront retreat with direct lake access, a private dock, and an outdoor lounge. The double-height living room and dedicated home office make this an ideal luxury escape.",
+      highlights: [
+        "Direct lake access",
+        "Private dock and outdoor lounge",
+        "Double-height living room",
+        "Dedicated home office"
+      ],
+      googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=210+Shoreline+Drive+Lake+Winnebago+MO+64034"
+    }, {
+      id: "plaza-residence",
+      name: "Plaza Executive Residence",
+      address: "4720 Jefferson Street",
+      city: "Kansas City",
+      state: "MO",
+      zip: "64112",
+      fullAddress: "4720 Jefferson Street, Kansas City, MO 64112",
+      price: "$640,000",
+      beds: 3,
+      baths: 2.5,
+      sqft: 2060,
+      type: "Residence",
+      yearBuilt: 2018,
+      description: "Minutes from the Country Club Plaza, this executive residence boasts designer interior finishes, a private terrace, and secure covered parking. Perfect for urban professionals.",
+      highlights: [
+        "Minutes from Country Club Plaza",
+        "Designer interior finishes",
+        "Private terrace",
+        "Secure covered parking"
+      ],
+      googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=4720+Jefferson+Street+Kansas+City+MO+64112"
+    }, {
+      id: "westside-farmhouse",
+      name: "Westside Modern Farmhouse",
+      address: "2101 Summit Street",
+      city: "Kansas City",
+      state: "MO",
+      zip: "64108",
+      fullAddress: "2101 Summit Street, Kansas City, MO 64108",
+      price: "$875,000",
+      beds: 4,
+      baths: 3.5,
+      sqft: 2950,
+      type: "Farmhouse",
+      yearBuilt: 2022,
+      description: "A modern farmhouse in the vibrant Westside neighborhood. Open-concept living, a gourmet kitchen with marble countertops, and a spacious backyard with a fire pit and deck.",
+      highlights: [
+        "Open-concept living",
+        "Gourmet kitchen with marble counters",
+        "Spacious backyard with fire pit",
+        "Walkable to Westside art galleries"
+      ],
+      googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=2101+Summit+Street+Kansas+City+MO+64108"
+    }, {
+      id: "briarcliff-estate",
+      name: "Briarcliff Executive Estate",
+      address: "5801 NW Barry Road",
+      city: "Kansas City",
+      state: "MO",
+      zip: "64154",
+      fullAddress: "5801 NW Barry Road, Kansas City, MO 64154",
+      price: "$1,450,000",
+      beds: 5,
+      baths: 4.5,
+      sqft: 4350,
+      type: "Estate",
+      yearBuilt: 2019,
+      description: "A magnificent estate in the prestigious Briarcliff neighborhood. Panoramic views, a resort-style pool, home theater, and a three-car garage. The epitome of luxury living.",
+      highlights: [
+        "Panoramic city views",
+        "Resort-style pool and spa",
+        "Home theater and wet bar",
+        "Three-car garage"
+      ],
+      googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=5801+NW+Barry+Road+Kansas+City+MO+64154"
+    }, {
+      id: "waldo-charmer",
+      name: "Waldo Classic Charmer",
+      address: "7420 Wornall Road",
+      city: "Kansas City",
+      state: "MO",
+      zip: "64114",
+      fullAddress: "7420 Wornall Road, Kansas City, MO 64114",
+      price: "$525,000",
+      beds: 3,
+      baths: 2,
+      sqft: 1820,
+      type: "Craftsman",
+      yearBuilt: 1940,
+      description: "A beautifully preserved Craftsman home in the beloved Waldo neighborhood. Original hardwood floors, a modernized kitchen with a breakfast bar, and a screened-in porch overlooking a lush yard.",
+      highlights: [
+        "Original hardwood floors",
+        "Modernized kitchen with breakfast bar",
+        "Screened-in porch",
+        "Minutes from Waldo's shops and dining"
+      ],
+      googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=7420+Wornall+Road+Kansas+City+MO+64114"
+    }, {
+      id: "crossroads-loft",
+      name: "Crossroads Artist Loft",
+      address: "1818 Baltimore Avenue",
+      city: "Kansas City",
+      state: "MO",
+      zip: "64108",
+      fullAddress: "1818 Baltimore Avenue, Kansas City, MO 64108",
+      price: "$495,000",
+      beds: 2,
+      baths: 2,
+      sqft: 1680,
+      type: "Loft",
+      yearBuilt: 1912,
+      description: "A stunning loft in the Crossroads Arts District. Soaring ceilings, exposed ductwork, and a wall of windows. Live above galleries, restaurants, and the famous First Fridays art walk.",
+      highlights: [
+        "Soaring 14-foot ceilings",
+        "Exposed ductwork and brick",
+        "Wall of windows with city views",
+        "Heart of the Crossroads Arts District"
+      ],
+      googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=1818+Baltimore+Avenue+Kansas+City+MO+64108"
+    }, {
+      id: "northland-haven",
+      name: "Northland Family Haven",
+      address: "8301 N Oak Trafficway",
+      city: "Kansas City",
+      state: "MO",
+      zip: "64155",
+      fullAddress: "8301 N Oak Trafficway, Kansas City, MO 64155",
+      price: "$425,000",
+      beds: 4,
+      baths: 2.5,
+      sqft: 2250,
+      type: "Traditional",
+      yearBuilt: 2005,
+      description: "A spacious traditional home in the sought-after Northland. Open floor plan, a gourmet eat-in kitchen, a large fenced backyard with a deck, and a finished basement perfect for a media room or gym.",
+      highlights: [
+        "Open floor plan",
+        "Gourmet eat-in kitchen",
+        "Large fenced backyard with deck",
+        "Finished basement for media or gym"
+      ],
+      googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=8301+N+Oak+Trafficway+Kansas+City+MO+64155"
+    }];
 
     const form = document.getElementById("callForm");
     const propertySelect = document.getElementById("propertySelect");
@@ -1309,6 +1534,8 @@
     const propertyName = document.getElementById("propertyName");
     const propertyAddress = document.getElementById("propertyAddress");
     const propertyMeta = document.getElementById("propertyMeta");
+    const propertyHighlights = document.getElementById("propertyHighlights");
+    const propertyMapLink = document.getElementById("propertyMapLink");
     const callButton = document.getElementById("callButton");
     const spinner = document.getElementById("spinner");
     const phoneIcon = document.getElementById("phoneIcon");
@@ -1327,26 +1554,40 @@
     const nextLogsPage = document.getElementById("nextLogsPage");
 
     function initializeProperties() {
-      propertySelect.innerHTML = properties.map(property =>
-        `<option value="${property.id}">${property.name} · ${property.price}</option>`
+      propertySelect.innerHTML = properties.map(p =>
+        `<option value="${p.id}">${p.name} · ${p.price}</option>`
       ).join("");
 
       renderProperty(properties[0]);
     }
 
     function getSelectedProperty() {
-      return properties.find(property => property.id === propertySelect.value) || properties[0];
+      return properties.find(p => p.id === propertySelect.value) || properties[0];
     }
 
     function renderProperty(property) {
       propertyName.textContent = property.name;
-      propertyAddress.textContent = property.address;
+
+      // Address with map link
+      const addressSpan = propertyAddress.querySelector("span");
+      if (addressSpan) addressSpan.textContent = property.fullAddress;
+
+      propertyMapLink.href = property.googleMapsUrl;
+
+      // Meta chips: price, beds, baths, sqft, type, year built
       propertyMeta.innerHTML = [
         property.price,
-        property.beds,
-        property.baths,
-        property.size
+        `${property.beds} bed${property.beds > 1 ? "s" : ""}`,
+        `${property.baths} bath${property.baths > 1 ? "s" : ""}`,
+        `${property.sqft.toLocaleString()} sq ft`,
+        property.type,
+        `Built ${property.yearBuilt}`
       ].map(item => `<span class="meta-chip">${item}</span>`).join("");
+
+      // Highlights
+      propertyHighlights.innerHTML = property.highlights.map(h =>
+        `<li>${h}</li>`
+      ).join("");
     }
 
     function normalizePhone(value) {
@@ -1373,11 +1614,12 @@
         `You are making an outbound call on behalf of a real estate team.`,
         `Speak naturally, professionally, and warmly.`,
         `The client requested information about the property "${property.name}".`,
-        `Property address: ${property.address}.`,
+        `Property address: ${property.fullAddress}.`,
         `Listed price: ${property.price}.`,
-        `Property type: ${property.type}.`,
-        `Bedrooms: ${property.beds}. Bathrooms: ${property.baths}. Size: ${property.size}.`,
-        `Key highlights: ${property.highlights.join("; ")}.`,
+        `Property type: ${property.type}. Built in ${property.yearBuilt}.`,
+        `Bedrooms: ${property.beds}. Bathrooms: ${property.baths}. Size: ${property.sqft.toLocaleString()} sq ft.`,
+        `Highlights: ${property.highlights.join("; ")}.`,
+        `Description: ${property.description}`,
         `Explain the property clearly without sounding as though you are reading a script.`,
         `Ask what the client is looking for, answer reasonable questions using only the supplied details, and do not invent missing facts.`,
         `If the client is interested, ask whether they would like to arrange a viewing or receive a follow-up from an agent.`,
