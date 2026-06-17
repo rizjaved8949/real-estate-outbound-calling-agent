@@ -119,14 +119,19 @@
     }
 
     .brand-mark {
-      width: 38px;
-      height: 38px;
-      display: grid;
-      place-items: center;
-      border-radius: 12px;
-      background: linear-gradient(135deg, var(--accent), var(--accent-2));
-      color: #03111b;
-      box-shadow: 0 10px 25px rgba(99, 230, 190, .2);
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 44px;
+    }
+
+    .brand-mark img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
     }
 
     .live-pill {
@@ -1227,10 +1232,7 @@
     <nav>
       <div class="brand">
         <div class="brand-mark" aria-hidden="true">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-            <path d="M5 10.5 12 5l7 5.5V19a1 1 0 0 1-1 1h-4v-5h-4v5H6a1 1 0 0 1-1-1v-8.5Z" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/>
-            <path d="M9 10h6" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/>
-          </svg>
+          <img src="dark_mode_logo.png" alt="Real Estate Outbound Calling Agent logo" />
         </div>
         <span>Real Estate Outbound Calling Agent</span>
       </div>
