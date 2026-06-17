@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#07111f" />
-  <title>Property Voice AI Demo</title>
+  <title>Real AI Coach Agent</title>
   <style>
     :root {
       --bg: #06101d;
@@ -796,7 +796,7 @@
     .call-log-table {
       width: 100%;
       border-collapse: collapse;
-      min-width: 720px;
+      min-width: 820px;
     }
 
     .call-log-table th,
@@ -1024,7 +1024,7 @@
             <path d="M9 10h6" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/>
           </svg>
         </div>
-        <span>Property Voice AI</span>
+        <span>Real AI Coach Agent</span>
       </div>
       <div class="live-pill"><span class="pulse-dot"></span> AI agent online</div>
     </nav>
@@ -1034,7 +1034,7 @@
         <div class="panel-inner">
           <div class="panel-header">
             <div>
-              <div class="panel-kicker">Outbound demo</div>
+              <div class="panel-kicker"></div>
               <h2>Request a property call</h2>
             </div>
             <div class="step-number">01</div>
@@ -1088,7 +1088,7 @@
         <div class="panel-inner">
           <div class="panel-header">
             <div>
-              <div class="panel-kicker">Inbound demo</div>
+              <div class="panel-kicker"></div>
               <h2>Call the AI directly</h2>
             </div>
             <div class="step-number">02</div>
@@ -1155,11 +1155,12 @@
                 <th>To</th>
                 <th>Duration</th>
                 <th>Time</th>
+                <th>Status</th>
               </tr>
             </thead>
             <tbody id="callLogsBody">
               <tr>
-                <td colspan="5" class="muted-cell">No call logs loaded yet.</td>
+            <td colspan="6" class="muted-cell">No call logs loaded yet.</td>
               </tr>
             </tbody>
           </table>
@@ -1180,15 +1181,9 @@
     </section>
 
 
-    <section class="flow-strip" aria-label="How the demo works">
-      <div class="flow-item"><div class="flow-icon">1</div><div class="flow-title">Choose property</div></div>
-      <div class="flow-item"><div class="flow-icon">2</div><div class="flow-title">Enter number</div></div>
-      <div class="flow-item"><div class="flow-icon">3</div><div class="flow-title">Trigger n8n</div></div>
-      <div class="flow-item"><div class="flow-icon">4</div><div class="flow-title">Retell calls</div></div>
-      <div class="flow-item"><div class="flow-icon">5</div><div class="flow-title">AI explains</div></div>
-    </section>
 
-    <footer>Interactive client demonstration · Powered by your Retell AI and n8n workflow</footer>
+
+
   </main>
 
   <div class="toast" id="toast" role="status"></div>
@@ -1502,7 +1497,7 @@
       if (!Array.isArray(calls) || calls.length === 0) {
         callLogsBody.innerHTML = `
           <tr>
-            <td colspan="5" class="muted-cell">No call logs found.</td>
+            <td colspan="6" class="muted-cell">No call logs found.</td>
           </tr>
         `;
 
@@ -1525,6 +1520,7 @@
             <td>${escapeHtml(call.to_number || "-")}</td>
             <td>${escapeHtml(formatDuration(call))}</td>
             <td>${escapeHtml(formatCallTime(call.start_timestamp))}</td>
+            <td>${escapeHtml(call.call_status || call.status || "-")}</td>
           </tr>
         `;
       }).join("");
@@ -1597,7 +1593,7 @@
       } catch (error) {
         callLogsBody.innerHTML = `
           <tr>
-            <td colspan="5" class="muted-cell">Unable to load call logs.</td>
+            <td colspan="6" class="muted-cell">Unable to load call logs.</td>
           </tr>
         `;
 
